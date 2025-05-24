@@ -1,20 +1,21 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
-      Blank
+      Avaliação Prática II
     </ion-title>
+    <ion-title size="small">Persistência de informações (local e remota)</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Desenvolvimento - Biblioteca</ion-card-title>
+    </ion-card-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-card-content>
+      <ion-button color="dark" routerLink="/exercicio1">Exercício 1</ion-button>
+      <ion-button color="dark" routerLink="/exercicio2">Exercício 2</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
