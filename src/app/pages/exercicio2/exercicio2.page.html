@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>Exercício 2</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Livros</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        @for(livro of livros$ | async; track livro.id) {
+        <ion-item>
+          <ion-label>
+            <h2>{{ livro.titulo }}</h2>
+            @if(livro.subtitulo) {
+              <h3>{{ livro.subtitulo }}</h3>
+            }
+            <p><strong>Autor:</strong> {{ livro.autor.nome }} {{ livro.autor.sobrenone }}</p>
+            <p><strong>Editora:</strong> {{ livro.editora }}</p>
+            <p><strong>Publicado em:</strong> {{ livro.dataPublicacao | date: 'dd/MM/YYYY' }}</p>
+            @if(livro.sinopse) {
+            <p><strong>Sinopse:</strong> {{ livro.sinopse }}</p>
+            }
+          </ion-label>
+
+          <ion-buttons slot="end">
+            <ion-button color="primary">
+              <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+            <ion-button color="danger">
+              <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+        } @empty {
+        <ion-text>Nenhum livro cadastrado</ion-text>
+        }
+      </ion-list>
+      <ion-button color="dark" fill="outline" expand="block" (click)="abrirAdicionar()">
+        Adicionar
+        <ion-icon name="add-outline" slot="start" />
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

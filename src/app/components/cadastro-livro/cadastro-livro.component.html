@@ -1,0 +1,46 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Cadastro de livro</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form>
+        <ion-item>
+          <ion-input label="Título" labelPlacement="floating" fill="clear" />
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="Subtítulo" labelPlacement="floating" fill="clear" />
+        </ion-item>
+
+        <ion-item>
+          <ion-textarea label="Sinopse" labelPlacement="floating" fill="clear" rows="5" />
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="Data da publicação" labelPlacement="floating" fill="clear" type="date" />
+        </ion-item>
+
+        <ion-item>
+          <ion-select label="Autor" interface="popover">
+            @for(autor of autores; track autor.id) {
+            <ion-select-option [value]="autor.id">{{ autor.nome }}</ion-select-option>
+            } @empty {
+            <ion-select-option disabled>Nenhum autor cadastrado</ion-select-option>
+            }
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="Editora" labelPlacement="floating" fill="clear" />
+        </ion-item>
+
+        <ion-button expand="block" color="dark" class="ion-margin-top">
+          Salvar
+          <ion-icon name="save-outline" slot="start" />
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
