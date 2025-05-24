@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>Exercício 1</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" />
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Autores</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        @for(autor of autores; track autor.id) {
+        <ion-item>
+          <ion-label>
+            <h2>{{ autor.nome }} {{ autor.sobrenone }}</h2>
+            <p><strong>Nascimento:</strong> {{ autor.dataNascimento | date:'dd/MM/yyyy' }}</p>
+            <p><strong>Nacionalidade:</strong> {{ autor.nacionalidade }}</p>
+            <p><strong>Email:</strong> {{ autor.email }}</p>
+          </ion-label>
+
+          <ion-buttons slot="end">
+            <ion-button color="primary">
+              <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+            <ion-button color="danger">
+              <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+        } @empty {
+        <ion-text>Nenhum autor cadastrado</ion-text>
+        }
+      </ion-list>
+      <ion-button color="dark" fill="outline" expand="block" (click)="abrirAdicionar()">
+        Adicionar
+        <ion-icon name="add-outline" slot="start" />
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

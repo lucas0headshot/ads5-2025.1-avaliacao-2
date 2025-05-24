@@ -1,0 +1,40 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Cadastro de autor</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form>
+        <ion-item>
+          <ion-input label="Nome" labelPlacement="floating" fill="clear" />
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="Sobrenome" labelPlacement="floating" fill="clear" />
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="Data de nascimento" labelPlacement="floating" fill="clear" type="date" />
+        </ion-item>
+
+        <ion-item>
+          <ion-select label="Nacionalidade" interface="popover">
+            <ion-select-option value="BR">Brasileiro(a)</ion-select-option>
+            <ion-select-option value="PT">Português</ion-select-option>
+            <ion-select-option value="ARG">Argentino</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="E-mail" labelPlacement="floating" fill="clear" type="email" />
+        </ion-item>
+
+        <ion-button expand="block" color="dark" class="ion-margin-top">
+          Salvar
+          <ion-icon name="save-outline" slot="start" />
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
