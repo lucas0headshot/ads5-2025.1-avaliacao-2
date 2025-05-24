@@ -21,11 +21,14 @@ export class Exercicio1Page implements OnInit {
   ngOnInit() {
   }
 
-  public async abrirAdicionar() {
+  public async abrirAdicionar(autor?: Autor) {
     const modal = await this.modalController.create({
       component: CadastroAutorComponent,
       breakpoints: [0.5, 0.75, 0.95],
-      initialBreakpoint: 0.75
+      initialBreakpoint: 0.75,
+      componentProps: {
+        autor: autor
+      }
     })
 
     modal.present()
