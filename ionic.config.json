@@ -1,0 +1,7 @@
+{
+  "name": "avaliacao-pratica-2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
