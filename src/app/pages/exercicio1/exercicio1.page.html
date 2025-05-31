@@ -26,10 +26,10 @@
           </ion-label>
 
           <ion-buttons slot="end">
-            <ion-button color="primary">
+            <ion-button (click)="editar(autor)" color="primary">
               <ion-icon name="create-outline" slot="icon-only"></ion-icon>
             </ion-button>
-            <ion-button color="danger">
+            <ion-button (click)="excluir(autor)" color="danger">
               <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
             </ion-button>
           </ion-buttons>

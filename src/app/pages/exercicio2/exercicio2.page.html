@@ -31,10 +31,10 @@
           </ion-label>
 
           <ion-buttons slot="end">
-            <ion-button color="primary">
+            <ion-button (click)="editar(livro)" color="primary">
               <ion-icon name="create-outline" slot="icon-only"></ion-icon>
             </ion-button>
-            <ion-button color="danger">
+            <ion-button (click)="excluir(livro)" color="danger">
               <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
             </ion-button>
           </ion-buttons>

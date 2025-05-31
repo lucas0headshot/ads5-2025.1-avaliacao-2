@@ -5,20 +5,22 @@
     </ion-card-header>
     <ion-card-content>
       <form>
+        <ion-input [hidden]="true" [(ngModel)]="autor.id" [ngModelOptions]="{standalone: true}"></ion-input>
+
         <ion-item>
-          <ion-input label="Nome" labelPlacement="floating" fill="clear" />
+          <ion-input label="Nome" [(ngModel)]="autor.nome" labelPlacement="floating" fill="clear" [ngModelOptions]="{standalone: true}" />
         </ion-item>
 
         <ion-item>
-          <ion-input label="Sobrenome" labelPlacement="floating" fill="clear" />
+          <ion-input label="Sobrenome" [(ngModel)]="autor.sobrenone" labelPlacement="floating" fill="clear" [ngModelOptions]="{standalone: true}" />
         </ion-item>
 
         <ion-item>
-          <ion-input label="Data de nascimento" labelPlacement="floating" fill="clear" type="date" />
+          <ion-input label="Data de nascimento" [(ngModel)]="autor.dataNascimento" labelPlacement="floating" fill="clear" type="date" [ngModelOptions]="{standalone: true}" />
         </ion-item>
 
         <ion-item>
-          <ion-select label="Nacionalidade" interface="popover">
+          <ion-select label="Nacionalidade" interface="popover" [(ngModel)]="autor.nacionalidade" [ngModelOptions]="{standalone: true}">
             <ion-select-option value="BR">Brasileiro(a)</ion-select-option>
             <ion-select-option value="PT">Português</ion-select-option>
             <ion-select-option value="ARG">Argentino</ion-select-option>
@@ -26,10 +28,10 @@
         </ion-item>
 
         <ion-item>
-          <ion-input label="E-mail" labelPlacement="floating" fill="clear" type="email" />
+          <ion-input label="E-mail" labelPlacement="floating" fill="clear" type="email" [(ngModel)]="autor.email" [ngModelOptions]="{standalone: true}" />
         </ion-item>
 
-        <ion-button expand="block" color="dark" class="ion-margin-top">
+        <ion-button expand="block" (click)="criarOuAtualizar()" color="dark" class="ion-margin-top">
           Salvar
           <ion-icon name="save-outline" slot="start" />
         </ion-button>
